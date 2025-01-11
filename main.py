@@ -185,7 +185,6 @@ async def ing(message: types.Message):
 @shaxzodtorayev - IELTS 7.0, Reading 8.5 sohibining blogi! 🔥""")
 
 
-@dp.message_handler(text=[""])
 @dp.message_handler(text=["🇺🇿 O'zbek adabiyoti"])
 async def uzb(message: types.Message):
     await message.answer("Sizga qaysi janrdagi audio kitoblar kerak? Tanlang! 👇", reply_markup=uzb_btn)
@@ -935,14 +934,6 @@ async def rus(message: types.Message):
 
 @dp.message_handler(text=[""])
 async def rus(message: types.Message):
-    rus_kitob = []
-    kit = open("static/dokuments/")
-    for i in rus_kitob:
-        await message.answer_document(open(i, 'rb'))
-
-
-@dp.message_handler(text=[""])
-async def rus(message: types.Message):
     rus_kitob = ["static/dokuments/informatika_8_uzb.pdf",
                  "static/dokuments/ingliz_tili_8_metodika.pdf",
                  "static/dokuments/geometriya_8_uzb.pdf",
@@ -1396,20 +1387,17 @@ async def ans(message: types.Message):
 
 @dp.message_handler(text=["ortga"])
 async def ans(message: types.Message):
-    await message.answer("Tanlang! 👇",
-                         reply_markup=rus_btn)
+    await message.answer("Tanlang! 👇",reply_markup=rus_btn)
 
 
 @dp.message_handler(text=["GO Back"])
 async def ans(message: types.Message):
-    await message.answer("Sizga qaysi janrdagi audio kitoblar kerak? Tanlang! 👇",
-                         reply_markup=uzb_btn)
+    await message.answer("Sizga qaysi janrdagi audio kitoblar kerak? Tanlang! 👇",reply_markup=uzb_btn)
 
 
 @dp.message_handler(text=["🇷🇺 Ruscha"])
 async def rus(message: types.Message):
-    await message.answer("Sizga qaysi janrdagi audio kitoblar kerak? Tanlang! 👇",
-                         reply_markup=uzb_btn)
+    await message.answer("Sizga qaysi janrdagi audio kitoblar kerak? Tanlang! 👇",reply_markup=uzb_btn)
 
 
 @dp.message_handler(text=["orqaga"])
@@ -1422,9 +1410,9 @@ async def ans(message: types.Message):
     await message.answer("Asosiy menyu!", reply_markup=start_btn)
 
 
-@dp.message_handler(text=["English"])
-async def sa(message: types.Message):
-    await message.answer("rus")
+# @dp.message_handler(text=["English"])
+# async def sa(message: types.Message):
+#     await message.answer("rus")
 
 
 if __name__ == "__main__":
